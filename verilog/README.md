@@ -1,5 +1,20 @@
 # Verilog basics
 
+## Prerequisites
+
+You will need the following:
+
+- An editor that understands Verilog. Atom or Sublime Text should be fine.
+- [Icarus Verilog](http://iverilog.icarus.com/). Your system should have it
+  packaged:
+    - `apt install iverilog`
+    - `brew install icarus-verilog`
+    - ...
+- Optionally [GTKWave](http://gtkwave.sourceforge.net/). This should also be
+  available from your system.
+
+## Makefile targets
+
 To run `adder.v`, use:
 
     make run-adder
