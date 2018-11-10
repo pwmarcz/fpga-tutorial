@@ -75,7 +75,7 @@ Later, check that you can do the same using an arithmetic expression: `assign s 
 
 Here is a D flip-flop:
 
-![Edge triggered D flip flop](https://en.wikipedia.org/wiki/File:Edge_triggered_D_flip_flop.svg)
+![Edge triggered D flip flop](https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Edge_triggered_D_flip_flop.svg/448px-Edge_triggered_D_flip_flop.svg.png)
 
 What does it output? Draw a table.
 
