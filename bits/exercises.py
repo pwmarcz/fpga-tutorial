@@ -94,3 +94,31 @@ def replace_lowest_byte(a, b):
     '''
 
     return 0
+
+
+def bit_mask(n):
+    '''
+    Return a number consisting of 1s in N lowest positions.
+
+    >>> bin(bit_mask(4))
+    '0b1111'
+
+    >>> bin(bit_mask(7))
+    '0b1111111'
+    '''
+
+    return 0
+
+
+def n_lowest(a, n):
+    '''
+    Truncate a number to N lowest bits.
+
+    >>> bin(n_lowest(0b100100, 3))
+    '0b100'
+
+    >>> hex(n_lowest(0xdeadbeef, 16))
+    '0xbeef'
+    '''
+
+    return 0

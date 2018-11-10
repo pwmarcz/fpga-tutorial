@@ -1,4 +1,4 @@
-# Bit operations exercises
+# Bit operations
 
 Here are a few exercises on bit operations.
 
