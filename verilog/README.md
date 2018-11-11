@@ -71,6 +71,14 @@ using Verilog. You can run the program and print values to test it.
 
 Later, check that you can do the same using an arithmetic expression: `assign s = x + y`.
 
+## SR (NAND) latch
+
+![SR latch](https://upload.wikimedia.org/wikipedia/commons/9/92/SR_Flip-flop_Diagram.svg)
+
+What does it do? Draw a table, it will help with the next exercise.
+
+Optionally: implement and test in Verilog.
+
 ## Data flip-flop (DFF)
 
 Here is a D flip-flop:
