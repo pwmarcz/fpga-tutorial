@@ -100,7 +100,11 @@ Implement a counter:
     module counter(input wire clk,
                    input wire en,
                    input wire rst,
-                   output wire [7:0] count);
+                   output reg [3:0] count);
+
+You can use the provided `counter.v` and `counter_tb.v`.
 
 The counter should increase on a positive clock edge whenever `en` (enable) is
-set, and reset to 0 whenever `rst` (reset) is set.
+set, and reset to 0 whenever `rst` (reset) is set:
+
+![counter wave](counter.png)
