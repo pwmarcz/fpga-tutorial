@@ -15,13 +15,13 @@ You will need the following:
 
 ## Makefile targets
 
-To run `adder.v`, use:
+To run `adder_tb.v`, use:
 
     make run-adder
 
 To run `adder.v` and view the results in GTKWave, use:
 
-    make sim-adder
+    make sim-adder_tb
 
 ## Adder
 
@@ -67,7 +67,9 @@ Finally, use the adders to add a 4-bit number:
 ### In Verilog
 
 Now, implement the same (half-adder, adder, and 4-bit adder) in `adder.v`,
-using Verilog. You can run the program and print values to test it.
+using Verilog.
+
+You can run the test-bench (`adder_tb.v`) and print values to test the adder.
 
 Later, check that you can do the same using an arithmetic expression: `assign s = x + y`.
 
