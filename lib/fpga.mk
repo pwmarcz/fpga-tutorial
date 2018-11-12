@@ -26,6 +26,6 @@ run: $(V:.v=.out)
 
 .PHONY: clean
 clean:
-	rm -f *.bin *.blif *.asc *.out *.d
+	rm -f *.bin *.blif *.asc *.out *.d *.vcd
 
 include $(wildcard *.d)
