@@ -135,6 +135,8 @@ You can use the provided `traffic.v` and `traffic_tb.v`.
   cycles.
 - (TODO describe) **SPI transmit module**: Given a byte, transmit it as a
   series of bits.
+- (TODO describe) **Memory module**: Implement a 256-byte memory with separate
+  read and write ports.
 
 ## Links
 
