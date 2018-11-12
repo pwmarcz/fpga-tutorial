@@ -17,11 +17,11 @@ You will need the following:
 
 To run `adder_tb.v`, use:
 
-    make run-adder
+    make run V=adder_tb.v
 
 To run `adder.v` and view the results in GTKWave, use:
 
-    make sim-adder_tb
+    make sim V=adder_tb.v
 
 ## Adder
 

@@ -16,13 +16,13 @@ MAKEDEPS := ../lib/make-deps
 %.out: %.v %.d
 	$(IVERILOG) $< -o $@
 
-.PHONY: run-%
-run-%: %.out
-	./$<
-
-.PHONY: sim-%
-sim-%: %.vcd
+.PHONY: sim
+sim: $(V:.v=.vcd)
 	$(GTKWAVE) $<
+
+.PHONY: run
+run: $(V:.v=.out)
+	./$<
 
 .PHONY: clean
 clean:
