@@ -109,6 +109,24 @@ set, and reset to 0 whenever `rst` (reset) is set:
 
 ![counter wave](counter.png)
 
+## Traffic light controller
+
+    module traffic(input wire clk,
+                   input wire go,
+                   output wire red,
+                   output wire yellow,
+                   output wire green);
+
+You can use the provided `traffic.v` and `traffic_tb.v`.
+
+- Initially, the `red` light should be lit (1).
+- When `go` is set to 1, you should light up `red` and `yellow` for 3 cycles,
+  then switch to `green`.
+- When `go` is set back to 0, you should light `yellow` for 3 cycles, then
+  switch to `red`.
+
+![traffic wave](traffic.png)
+
 ## Other exercises
 
 - **Clock divider**: Given a clock signal, output a slower clock signal that
@@ -117,8 +135,6 @@ set, and reset to 0 whenever `rst` (reset) is set:
   cycles.
 - (TODO describe) **SPI transmit module**: Given a byte, transmit it as a
   series of bits.
-- (TODO describe) **Traffic lights**: control "red", "yellow" and "green"
-  signals that react to a "route is free" signal.
 
 ## Links
 
