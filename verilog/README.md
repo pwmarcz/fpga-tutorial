@@ -108,3 +108,18 @@ The counter should increase on a positive clock edge whenever `en` (enable) is
 set, and reset to 0 whenever `rst` (reset) is set:
 
 ![counter wave](counter.png)
+
+## Other exercises
+
+- **Clock divider**: Given a clock signal, output a slower clock signal that
+  changes every 1024 (`1 << 10`) cycles.
+- **Shift register**: Output the bits from input wire, delayed by 8 clock
+  cycles.
+- (TODO describe) **SPI transmit module**: Given a byte, transmit it as a
+  series of bits.
+- (TODO describe) **Traffic lights**: control "red", "yellow" and "green"
+  signals that react to a "route is free" signal.
+
+## Links
+
+- [Verilog cheatsheet](https://www.cl.cam.ac.uk/teaching/0910/ECAD+Arch/files/verilogcheatsheet.pdf) (PDF)
