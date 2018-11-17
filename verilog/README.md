@@ -51,7 +51,7 @@ Now, use half-adders to construct an adder. An adder adds two bits and a carry-i
     1  1  0     0  1
     1  1  1     1  1
 
-Finally, use the adders to add a 4-bit number:
+Finally, use the adders to construct a 4-bit adder:
 
      x     y      s    c
 
