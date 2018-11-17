@@ -141,3 +141,4 @@ You can use the provided `traffic.v` and `traffic_tb.v`.
 ## Links
 
 - [Verilog cheatsheet](https://www.cl.cam.ac.uk/teaching/0910/ECAD+Arch/files/verilogcheatsheet.pdf) (PDF)
+- [HDLBits](https://hdlbits.01xz.net/wiki/Problem_sets) - online, interactive Verilog exercises
