@@ -109,6 +109,18 @@ set, and reset to 0 whenever `rst` (reset) is set:
 
 ![counter wave](counter.png)
 
+## Clock divider
+
+Given a clock signal, output a clock signal that is 4 times slower.
+
+    module clock_divider(input wire clk_in,
+                         output wire clk_out);
+
+In other words, we should get:
+
+    clk_in:  0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 ....
+    clk_out: 0 0 0 0 1 1 1 1 0 0 0 0 1 1 1 1 ....
+
 ## Traffic light controller
 
     module traffic(input wire clk,
@@ -126,6 +138,26 @@ You can use the provided `traffic.v` and `traffic_tb.v`.
   switch to `red`.
 
 ![traffic wave](traffic.png)
+
+## Parallel to serial
+
+Write a module that receives an 8-bit value and converts it to single bits.
+
+    module serial(input wire clk,
+                  input wire in,
+                  input wire [7:0] data,
+                  output wire out);
+
+- Normally, `out` should be 0.
+- The user should raise `in` to 1 for a single cycle, and set `data` to a
+  desired value in the same cycle.
+- Then, during the following 8 cycles, `out` should contain consecutive bits
+  of `data` (highest to lowest).
+- After that, `out` should go back to 0.
+
+For instance, if we set `in = 1` and `data = 8'b01101001` for a single cycle;
+`out` should be set to: 0, 1, 1, 0, 1, 0, 0, 1. Then it should return to 0
+until `in` is raised again.
 
 ## Memory module
 
@@ -150,13 +182,6 @@ How to initialize the memory to 0?
 
 Hint: You can use a `$display` statement to print debug messages while the
 module is working (for instance, `"Storing byte XX at address YY"`).
-
-## Other exercises
-
-- **Clock divider**: Given a clock signal, output a slower clock signal that
-  changes every 1024 (`1 << 10`) cycles.
-- **Shift register**: Output the bits from input wire, delayed by 8 clock
-  cycles.
 
 ## Links
 
