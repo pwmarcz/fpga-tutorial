@@ -157,8 +157,6 @@ module is working (for instance, `"Storing byte XX at address YY"`).
   changes every 1024 (`1 << 10`) cycles.
 - **Shift register**: Output the bits from input wire, delayed by 8 clock
   cycles.
-- (TODO describe) **SPI transmit module**: Given a byte, transmit it as a
-  series of bits.
 
 ## Links
 
