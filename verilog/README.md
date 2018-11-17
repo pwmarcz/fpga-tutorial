@@ -121,6 +121,9 @@ In other words, we should get:
     clk_in:  0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 ....
     clk_out: 0 0 0 0 1 1 1 1 0 0 0 0 1 1 1 1 ....
 
+Can you do the same, but 1024 times slower? (1024 = 2 to the 10th power, or
+`1 << 10`).
+
 ## Traffic light controller
 
     module traffic(input wire clk,
