@@ -127,6 +127,30 @@ You can use the provided `traffic.v` and `traffic_tb.v`.
 
 ![traffic wave](traffic.png)
 
+## Memory module
+
+Implement a 256-byte memory module with read and write ports.
+
+    module memory(input wire clk,
+                  input wire ren,
+                  input wire [7:0] raddr,
+                  output reg [7:0] rdata,
+                  input wire wen,
+                  input wire [7:0] waddr,
+                  input wire [7:0] wdata);
+
+- When `ren` (read enable) is set, in the next cycle set `rdata` to the byte at
+  `raddr` address.
+- When `wen` (write enable) is set, in the next cycle set the byte at `waddr`
+  address to `wdata`.
+- Both operations (read and write) can happen in the same cycle.
+
+Write a test bench. What will be the result of reading uninitialized memory?
+How to initialize the memory to 0?
+
+Hint: You can use a `$display` statement to print debug messages while the
+module is working (for instance, `"Storing byte XX at address YY"`).
+
 ## Other exercises
 
 - **Clock divider**: Given a clock signal, output a slower clock signal that
@@ -135,8 +159,6 @@ You can use the provided `traffic.v` and `traffic_tb.v`.
   cycles.
 - (TODO describe) **SPI transmit module**: Given a byte, transmit it as a
   series of bits.
-- (TODO describe) **Memory module**: Implement a 256-byte memory with separate
-  read and write ports.
 
 ## Links
 
