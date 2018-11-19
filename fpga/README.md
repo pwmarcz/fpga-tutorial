@@ -7,6 +7,7 @@ TODO:
     leds_bx.v
     button.v
     oled
+    uart
 
 ## Setup
 
@@ -128,6 +129,10 @@ display](https://botland.com.pl/index.php?controller=attachment&id_attachment=16
 has a common anode for all 4 digits. You will need to display the digits one at a time. Here is [a blog post on multiplexing 7 segment display](https://www.electronicsblog.net/4-digits-7-segments-led-display-multiplexing-with-arduino/).
 
 (TODO add more info once we try that)
+
+### Serial link (UART)
+
+(TODO)
 
 ### OLED displays
 
