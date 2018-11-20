@@ -64,7 +64,7 @@ build/%.d: %.v $(MAKEDEPS)
 build/%.$(BOARD).blif: %.v build/%.d
 	$(YOSYS) $(YOSYS_OPTS) \
 		-p "verilog_defines -DBOARD_$(BOARD) -DBOARD=$(BOARD)" \
-		-p "read_verilog $<" \
+		-p "read_verilog -noautowire $<" \
 		-p "synth_ice40 -top top -blif $@"
 
 build/%.$(BOARD).asc: build/%.$(BOARD).blif $(BOARD).pcf
