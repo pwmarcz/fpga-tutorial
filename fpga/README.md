@@ -2,8 +2,6 @@
 
 TODO:
 
-    Makefile
-    leds_icestick.v
     leds_bx.v
     button.v
     oled
