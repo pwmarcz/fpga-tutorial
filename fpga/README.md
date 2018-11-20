@@ -7,7 +7,9 @@ TODO:
     leds_bx.v
     button.v
     oled
-    uart
+    serial_hello.v
+    uart.v
+    serial.py
 
 ## Setup
 
@@ -79,7 +81,7 @@ regarding different parts in the next section.
   chapter. You will need three LEDs (don't forget the resistors!) and a button.
 - **Fade LEDs in and out** by implementing pulse-width modulation.
 - **Serial link**: Use the chip to communicate with computer over the serial
-  link. You can send a simple "Hello, world" first.
+  link.
   - Memory buffer: Implement a chip that has a small memory buffer and responds
     to "read" and "write" commands.
 - **Screens**: Draw something on the screen. Create an animation. Send a
@@ -132,7 +134,22 @@ has a common anode for all 4 digits. You will need to display the digits one at 
 
 ### Serial link (UART)
 
-(TODO)
+You can use the chip on Icestick to communicate with your computer over a
+serial connection (exposed as a second USB device; visible under `/dev/ttyUSB`
+under Linux).
+
+See `serial_hello.v` for a simple program that sends "Hello, world!"
+repeatedly. You can use `serial.py` to receive the data. Here is the
+[documentation for pySerial
+library](https://pythonhosted.org/pyserial/pyserial_api.html). Remember to set
+the baud rate correctly on both ends!
+
+You can also use a serial terminal such as `gtkterm` (see for instance
+[Communicate with hardware using USB cable for
+Ubuntu](https://elinux.org/Communicate_with_hardware_using_USB_cable_for_Ubuntu)).
+
+Note that the module we're using, `uart.v`, is a [third-party software
+developed by Tim Goddard](https://github.com/cyrozap/osdvu).
 
 ### OLED displays
 
@@ -149,6 +166,11 @@ I have two OLED screens:
 
 See `oled_mono.v` and `oled_color.v` for details on how to use.
 
+You might want to load some initial data into memory. You can use the
+[`$readmemh`
+function](https://timetoexplore.net/blog/initialize-memory-in-verilog) to do
+that.
+
 ## Links
 
 - [open-fpga-verilog-tutorial](https://github.com/Obijuan/open-fpga-verilog-tutorial/wiki/Chapter-0%3A-you-are-leaving-the-private-sector) -
@@ -157,3 +179,4 @@ See `oled_mono.v` and `oled_color.v` for details on how to use.
 - [migen](https://github.com/m-labs/migen) - a circuit generator in Python
 - [Lattice iCE40 LP/HX Family Data Sheet](http://www.latticesemi.com/view_document?document_id=49312)
 - [fpga4fun](https://www.fpga4fun.com/) - projects and information
+- [Initializing memory in Verilog](https://timetoexplore.net/blog/initialize-memory-in-verilog)
