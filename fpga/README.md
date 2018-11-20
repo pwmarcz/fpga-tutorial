@@ -2,7 +2,6 @@
 
 TODO:
 
-    button.v
     oled
     serial_hello.v
     uart.v
