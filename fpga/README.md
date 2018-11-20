@@ -47,6 +47,8 @@ For the TinyFPGA BX module, you need to set `BOARD=bx` flag:
 
     make flash V=leds_bx.v BOARD=bx
 
+(If for some reason you need sudo, append `USE_SUDO=1`).
+
 The build process has the following steps:
 
 1. Logic synthesis, using `yosys`. This produces a `.blif` file with your

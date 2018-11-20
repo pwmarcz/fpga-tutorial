@@ -21,6 +21,11 @@ ICETIME ?= icetime
 IVERILOG ?= iverilog
 GTKWAVE ?= gtkwave
 
+ifeq ($(USE_SUDO),1)
+ICEPROG := sudo $$(which $(ICEPROG))
+TINYPROG := sudo $$(which $(TINYPROG))
+endif
+
 MAKEDEPS = ../common/make-deps
 
 # Board-specific configuration
@@ -32,13 +37,13 @@ YOSYS_OPTS =
 ifeq ($(BOARD),icestick)
 PNR_OPTS = -d 1k -P tq144
 DEVICE = hx1k
-PROG = iceprog
+PROG = $(ICEPROG)
 endif
 
 ifeq ($(BOARD),bx)
 PNR_OPTS = -d 8k -P cm81
 DEVICE = lp8k
-PROG = tinyprog -p
+PROG = $(TINYPROG) -p
 endif
 
 ifndef VERBOSE
