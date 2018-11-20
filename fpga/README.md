@@ -2,7 +2,6 @@
 
 TODO:
 
-    leds_bx.v
     button.v
     oled
     serial_hello.v
