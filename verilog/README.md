@@ -87,7 +87,15 @@ Here is a D flip-flop:
 
 ![Edge triggered D flip flop](https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Edge_triggered_D_flip_flop.svg/448px-Edge_triggered_D_flip_flop.svg.png)
 
-What does it output? Draw a table.
+What does it do?
+
+- Hint: Analyze what happens when Clock = 0, then when Clock changes to 1,
+  then when clock stays at 1 and Data changes.
+- Spoilers:
+  - [Clock = 0, Data = D](dff1.png)
+  - [Clock = 1, Data = D](dff2.png)
+  - [Clock = 1, Data = 0](dff3-0.png)
+  - [Clock = 1, Data = 1](dff3-1.png)
 
 Implement it and test it in Verilog using primitive components (`nand` gates).
 
