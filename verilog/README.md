@@ -190,3 +190,4 @@ module is working (for instance, `"Storing byte XX at address YY"`).
 
 - [Verilog cheatsheet](https://www.cl.cam.ac.uk/teaching/0910/ECAD+Arch/files/verilogcheatsheet.pdf) (PDF)
 - [HDLBits](https://hdlbits.01xz.net/wiki/Problem_sets) - online, interactive Verilog exercises
+- [Verilog Beginner's Tutorial](http://zipcpu.com/tutorial/) by ZipCPU author
