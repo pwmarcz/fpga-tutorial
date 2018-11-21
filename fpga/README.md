@@ -3,9 +3,6 @@
 TODO:
 
     oled
-    serial_hello.v
-    uart.v
-    serial.py
 
 ## Setup
 
@@ -133,11 +130,11 @@ has a common anode for all 4 digits. You will need to display the digits one at 
 ### Serial link (UART)
 
 You can use the chip on Icestick to communicate with your computer over a
-serial connection (exposed as a second USB device; visible under `/dev/ttyUSB`
+serial connection (exposed as a second USB device; visible under `/dev/ttyUSB1`
 under Linux).
 
-See `serial_hello.v` for a simple program that sends "Hello, world!"
-repeatedly. You can use `serial.py` to receive the data. Here is the
+See `uart_hello.v` for a simple program that sends "Hello, world!"
+repeatedly. You can use `uart.py` to receive the data. Here is the
 [documentation for pySerial
 library](https://pythonhosted.org/pyserial/pyserial_api.html). Remember to set
 the baud rate correctly on both ends!
