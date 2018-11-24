@@ -1,9 +1,5 @@
 # FPGA
 
-TODO:
-
-    oled
-
 ## Setup
 
 You will need Verilog setup from the [previous step](../verilog/README.md).
@@ -151,15 +147,13 @@ developed by Tim Goddard](https://github.com/cyrozap/osdvu).
 I have two OLED screens:
 
 - "Two-color" (actually monochrome) 128x64 screen. The data is laid out in 8
-  "pages" of 128 bytes each. Each page describes a 128x8 strip, each byte is a
-  1x8 segment.
+  rows of 128 bytes each. Each row describes a 128x8 strip, each byte is a 1x8
+  segment.
 - 65536-color 96x64 screen. Each pixel is 16 bits. Note that this is more
   memory that Icestick has on board (12 KB; the Icestick's block RAMs hold 8 KB
   total).
 
-(TODO get the color display running)
-
-See `oled_mono.v` and `oled_color.v` for details on how to use.
+See `oled_pattern.v` and `oled_pattern_color.v` for details on how to use.
 
 You might want to load some initial data into memory. You can use the
 [`$readmemh`
