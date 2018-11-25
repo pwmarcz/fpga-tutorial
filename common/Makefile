@@ -79,7 +79,7 @@ build/%.vcd: build/%.out
 	cd build && ./$<
 
 build/%.out: %.v build/%.d
-	$(IVERILOG) $< -o $@
+	$(IVERILOG) -o $@ $<
 
 # Top-level goals (flash, sim, run, time)
 
