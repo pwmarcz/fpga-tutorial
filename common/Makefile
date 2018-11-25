@@ -75,9 +75,6 @@ build/%.bin: build/%.asc
 
 # Simulation
 
-build/%.vcd: build/%.out
-	cd build && ./$<
-
 build/%.out: %.v build/%.d
 	$(IVERILOG) -o $@ $<
 
@@ -93,8 +90,8 @@ flash:: build/$(V:.v=.$(BOARD).bin)
 	$(PROG) $<
 
 .PHONY: sim
-sim:: build/$(V:.v=.vcd)
-	$(GTKWAVE) $<
+sim:: run
+	$(GTKWAVE) $(V:.v=.vcd)
 
 .PHONY: run
 run:: build/$(V:.v=.out)
