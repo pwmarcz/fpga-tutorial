@@ -21,6 +21,8 @@ ICETIME ?= icetime
 IVERILOG ?= iverilog
 GTKWAVE ?= gtkwave
 
+SHARE_ICEBOX = $$(dirname $$(which $(ICETIME)))/../share/icebox
+
 ifeq ($(USE_SUDO),1)
 ICEPROG := sudo $$(which $(ICEPROG))
 TINYPROG := sudo $$(which $(TINYPROG))
@@ -37,12 +39,14 @@ YOSYS_OPTS =
 ifeq ($(BOARD),icestick)
 PNR_OPTS = -d 1k -P tq144
 DEVICE = hx1k
+CHIPDB = 1k
 PROG = $(ICEPROG)
 endif
 
 ifeq ($(BOARD),bx)
 PNR_OPTS = -d 8k -P cm81
 DEVICE = lp8k
+CHIPDB = 8k
 PROG = $(TINYPROG) -p
 endif
 
@@ -99,7 +103,7 @@ run:: build/$(V:.v=.out)
 
 .PHONY: time
 time:: build/$(V:.v=.$(BOARD).asc)
-	$(ICETIME) -d $<
+	$(ICETIME) -d $(DEVICE) -C $(SHARE_ICEBOX)/chipdb-$(CHIPDB).txt $<
 
 # Cleanup
 
