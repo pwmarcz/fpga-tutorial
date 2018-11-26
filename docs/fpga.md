@@ -175,3 +175,4 @@ that.
 - [Lattice iCE40 LP/HX Family Data Sheet](http://www.latticesemi.com/view_document?document_id=49312)
 - [fpga4fun](https://www.fpga4fun.com/) - projects and information
 - [Initializing memory in Verilog](https://timetoexplore.net/blog/initialize-memory-in-verilog)
+- [ICE40 layout viewer](https://knielsen.github.io/ice40_viewer/ice40_viewer.html), renders your .asc file

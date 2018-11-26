@@ -4,7 +4,7 @@
 all:
 
 # Don't delete these
-.PRECIOUS: build/%.d build/%.blif build/%.bin
+.PRECIOUS: build/%.d build/%.blif build/%.bin build/%.asc
 
 # Tool paths
 
