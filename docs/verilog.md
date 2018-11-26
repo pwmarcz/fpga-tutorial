@@ -111,10 +111,12 @@ Now implement the same using a `reg` and `always @(posedge clock)`.
 
 Implement a counter:
 
-    module counter(input wire clk,
-                   input wire en,
-                   input wire rst,
-                   output reg [3:0] count);
+```verilog
+module counter(input wire clk,
+               input wire en,
+               input wire rst,
+               output reg [3:0] count);
+```
 
 You can use the provided `counter.v` and `counter_tb.v`.
 
@@ -134,8 +136,10 @@ set, and reset to 0 whenever `rst` (reset) is set:
 
 Given a clock signal, output a clock signal that is 4 times slower.
 
-    module clock_divider(input wire clk_in,
-                         output wire clk_out);
+```verilog
+module clock_divider(input wire clk_in,
+                     output wire clk_out);
+```
 
 In other words, we should get:
 
@@ -153,11 +157,13 @@ Can you do the same, but 1024 times slower? (1024 = 2 to the 10th power, or
 
 ## Traffic light controller
 
-    module traffic(input wire clk,
-                   input wire go,
-                   output wire red,
-                   output wire yellow,
-                   output wire green);
+```verilog
+module traffic(input wire clk,
+               input wire go,
+               output wire red,
+               output wire yellow,
+               output wire green);
+```
 
 You can use the provided `traffic.v` and `traffic_tb.v`.
 
@@ -187,11 +193,13 @@ You can use the provided `traffic.v` and `traffic_tb.v`.
 
 Write a module that receives an 8-bit value and converts it to single bits.
 
-    module serial(input wire clk,
-                  input wire in,
-                  input wire [7:0] data,
-                  output wire ready,
-                  output wire out);
+```verilog
+module serial(input wire clk,
+              input wire in,
+              input wire [7:0] data,
+              output wire ready,
+              output wire out);
+```
 
 - Normally, `out` should be 0.
 - The user should raise `in` to 1 for a single cycle, and set `data` to a
@@ -217,13 +225,15 @@ Write a module that receives an 8-bit value and converts it to single bits.
 
 Implement a 256-byte memory module with read and write ports.
 
-    module memory(input wire clk,
-                  input wire ren,
-                  input wire [7:0] raddr,
-                  output reg [7:0] rdata,
-                  input wire wen,
-                  input wire [7:0] waddr,
-                  input wire [7:0] wdata);
+```verilog
+module memory(input wire clk,
+              input wire ren,
+              input wire [7:0] raddr,
+              output reg [7:0] rdata,
+              input wire wen,
+              input wire [7:0] waddr,
+              input wire [7:0] wdata);
+```
 
 - When `ren` (read enable) is set, in the next cycle set `rdata` to the byte at
   `raddr` address.
