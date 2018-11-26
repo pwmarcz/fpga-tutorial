@@ -195,7 +195,7 @@ Write a module that receives an 8-bit value and converts it to single bits.
 
 - Normally, `out` should be 0.
 - The user should raise `in` to 1 for a single cycle, and set `data` to a
-  desired value in the same cycle.
+  desired value in the same cycle. After that, `in` will go back to 0.
 - Then, during the following 8 cycles, `out` should contain consecutive bits
   of `data` (highest to lowest).
 - After that, `out` should go back to 0.
