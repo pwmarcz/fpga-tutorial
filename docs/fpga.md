@@ -1,7 +1,5 @@
 # FPGA
 
-Link to repo: [fpga-tutorial](https://github.com/pwmarcz/fpga-tutorial/)
-
 We'll be working in the `verilog` directory.
 
 ## Setup
