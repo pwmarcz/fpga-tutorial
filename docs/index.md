@@ -2,8 +2,6 @@
 title: FPGA tutorial
 ---
 
-# FPGA tutorial
-
 Here are some materials for my FPGA workshop. The workshop uses the open source
 Icestorm toolchain. The hardware is Icestick and TinyFPGA boards because that's
 what I have, as well as some peripherals like OLED displays.
