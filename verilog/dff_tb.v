@@ -11,7 +11,7 @@ module Top;
     begin
       $monitor($time, " clk = %b, data = %b, out = %b",
                clk, data, out);
-      $dumpfile("dff_tb.vcd");
+      $dumpfile(`VCD_FILE);
       $dumpvars;
 
       // Your test code here:

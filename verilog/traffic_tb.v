@@ -14,7 +14,7 @@ module Top;
     begin
       $monitor($time, " clk = %b, go = %b, red = %b, yellow = %b, green = %b",
                clk, go, red, yellow, green);
-      $dumpfile("traffic_tb.vcd");
+      $dumpfile(`VCD_FILE);
       $dumpvars;
 
       #4 go <= 1;

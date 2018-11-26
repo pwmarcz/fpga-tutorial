@@ -15,7 +15,7 @@ module Top;
     begin
       $monitor($time, " clk = %b, en = %b, rst = %b, count = %b",
                clk, en, rst, count);
-      $dumpfile("counter_tb.vcd");
+      $dumpfile(`VCD_FILE);
       $dumpvars;
 
       #2 en <= 0; rst <= 1;

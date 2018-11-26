@@ -13,7 +13,7 @@ module Top;
     begin
       $monitor($time, " x = %x, y = %x, c_in = %x, s = %x, c_out = %x",
                x, y, c_in, s, c_out);
-      $dumpfile("adder_tb.vcd");
+      $dumpfile(`VCD_FILE);
       $dumpvars;
 
       x <= 'h00; y <= 'h00; c_in <= 1;    // sum = 'h01

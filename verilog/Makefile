@@ -76,7 +76,7 @@ build/%.bin: build/%.asc
 # Simulation
 
 build/%.out: %.v build/%.d
-	$(IVERILOG) -o $@ $<
+	$(IVERILOG) -DVCD_FILE=\"$(<:.v=.vcd)\" -o $@ $<
 
 # Top-level goals (flash, sim, run, time)
 

@@ -16,7 +16,7 @@ module Top;
     begin
       $monitor($time, " clk = %b, in = %b, data = %b, ready = %b, out = %b",
                clk, in, data, ready, out);
-      $dumpfile("serial_tb.vcd");
+      $dumpfile(`VCD_FILE);
       $dumpvars;
 
       #2 in <= 1; data <= 8'b10101101;
