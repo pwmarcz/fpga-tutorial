@@ -17,8 +17,8 @@ module Top;
       $dumpfile("traffic_tb.vcd");
       $dumpvars;
 
-      #4 go = 1;
-      #10 go = 0;
-      #10 $finish;
+      #4 go <= 1;
+      #12 go <= 0;
+      #12 $finish;
     end
 endmodule // Top

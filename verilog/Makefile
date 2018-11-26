@@ -91,7 +91,7 @@ flash:: build/$(V:.v=.$(BOARD).bin)
 
 .PHONY: sim
 sim:: run
-	$(GTKWAVE) $(V:.v=.vcd)
+	$(GTKWAVE) build/$(V:.v=.vcd)
 
 .PHONY: run
 run:: build/$(V:.v=.out)

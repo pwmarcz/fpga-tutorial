@@ -18,10 +18,12 @@ module Top;
       $dumpfile("counter_tb.vcd");
       $dumpvars;
 
-      #4 en = 1; rst = 0;
-      #8 en = 1; rst = 1;
-      #2 en = 1; rst = 0;
-      #6 en = 0; rst = 0;
-      #2 $finish;
+      #2 en <= 0; rst <= 1;
+      #2 en <= 0; rst <= 0;
+      #2 en <= 1; rst <= 0;
+      #4 en <= 1; rst <= 1;
+      #2 en <= 1; rst <= 0;
+      #10 en <= 0; rst <= 0;
+      #4 $finish;
     end
 endmodule // Top

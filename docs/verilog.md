@@ -121,7 +121,14 @@ You can use the provided `counter.v` and `counter_tb.v`.
 The counter should increase on a positive clock edge whenever `en` (enable) is
 set, and reset to 0 whenever `rst` (reset) is set:
 
-![counter wave](counter.png)
+<script type="WaveDrom">
+{signal: [
+  {name: 'clk', wave:   'p............'},
+  {name: 'en',  wave:   '0..1.......0.'},
+  {name: 'rst', wave:   '10...10......'},
+  {name: 'count', wave: "x3..44344444.", data: ["0", "1", "2", "0", "1", "2", "3", "4", "5"]}
+]}
+</script>
 
 ## Clock divider
 
@@ -132,8 +139,14 @@ Given a clock signal, output a clock signal that is 4 times slower.
 
 In other words, we should get:
 
-    clk_in:  0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 ....
-    clk_out: 0 0 0 0 1 1 1 1 0 0 0 0 1 1 1 1 ....
+<script type="WaveDrom">
+{
+  "signal" : [
+    { "name": "clk_in", "wave": "p..........." },
+    { "name": "clk_out", "wave": "p..", period: 4 },
+  ]
+}
+</script>
 
 Can you do the same, but 1024 times slower? (1024 = 2 to the 10th power, or
 `1 << 10`).
@@ -154,7 +167,21 @@ You can use the provided `traffic.v` and `traffic_tb.v`.
 - When `go` is set back to 0, you should light `yellow` for 3 cycles, then
   switch to `red`.
 
-![traffic wave](traffic.png)
+<script type="WaveDrom">
+{
+  "signal" : [
+    { "name": "clk", "wave":    "p............." },
+    { "name": "go", "wave":     "0.1.....0....." },
+    { "node": "...a..b..c..d"},
+    { "name": "red",    "wave": "1.....0.....1." },
+    { "name": "yellow", "wave": "0..1..0..1..0." },
+    { "name": "green",  "wave": "0.....1..0...." }
+  ],
+  edge: [
+    "a<->b 3 cycles", "c<->d 3 cycles"
+  ]
+}
+</script>
 
 ## Parallel to serial
 
@@ -205,3 +232,8 @@ module is working (for instance, `"Storing byte XX at address YY"`).
 - [Verilog cheatsheet](https://www.cl.cam.ac.uk/teaching/0910/ECAD+Arch/files/verilogcheatsheet.pdf) (PDF)
 - [HDLBits](https://hdlbits.01xz.net/wiki/Problem_sets) - online, interactive Verilog exercises
 - [Verilog Beginner's Tutorial](http://zipcpu.com/tutorial/) by ZipCPU author
+
+<!-- WaveDrom -->
+<script src="http://wavedrom.com/skins/default.js" type="text/javascript"></script>
+<script src="http://wavedrom.com/wavedrom.min.js" type="text/javascript"></script>
+<script type="text/javascript">WaveDrom.ProcessAll();</script>
