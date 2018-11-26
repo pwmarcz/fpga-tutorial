@@ -67,8 +67,8 @@ build/%.$(BOARD).blif: %.v build/%.d
 		-p "read_verilog -noautowire $<" \
 		-p "synth_ice40 -top top -blif $@"
 
-build/%.$(BOARD).asc: build/%.$(BOARD).blif $(BOARD).pcf
-	$(PNR) -p $(BOARD).pcf $(PNR_OPTS) $< -o $@
+build/%.$(BOARD).asc: build/%.$(BOARD).blif pcf/$(BOARD).pcf
+	$(PNR) -p pcf/$(BOARD).pcf $(PNR_OPTS) $< -o $@
 
 build/%.bin: build/%.asc
 	$(ICEPACK) $< $@
