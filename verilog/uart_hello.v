@@ -1,5 +1,46 @@
 `include "uart.v"
 
+module uart_node(input wire clk,
+                 input wire is_receiving,
+                 input wire is_transmitting,
+                 output reg transmit = 0,
+                 output reg [7:0] tx_byte,
+                 input wire received,
+                 input wire [7:0] rx_byte);
+
+  parameter n = 13;
+  parameter greeting = "Hello World!\n";
+  wire [7:0] data[0:n-1];
+  reg [3:0] idx;
+
+  // Initialize data with a string. Sadly, Verilog string literals are just
+  // huge numbers, so a conversion is necessary.
+  generate
+    genvar i;
+    for (i = 0; i < n; i = i + 1) begin
+      assign data[i] = greeting[8*(n-i)-1 : 8*(n-i)-8];
+    end
+  endgenerate
+
+
+  always @(posedge clk) begin
+    // Only raise transmit for 1 cycle
+    if (transmit)
+      transmit <= 0;
+
+    if (!transmit && !is_transmitting) begin
+      transmit <= 1;
+      tx_byte <= data[idx];
+      if (idx == n - 1)
+        idx <= 0;
+      else
+        idx <= idx + 1;
+    end
+  end
+
+endmodule
+
+
 module top(input wire  CLK,
            input wire  RS232_Rx_TTL,
            output wire RS232_Tx_TTL,
@@ -7,25 +48,9 @@ module top(input wire  CLK,
 
   parameter baud_rate = 9600;
 
-  parameter n = 12;
-  wire [7:0] greeting[0:n-1];
-  assign greeting[0]  = "H";
-  assign greeting[1]  = "e";
-  assign greeting[2]  = "l";
-  assign greeting[3]  = "l";
-  assign greeting[4]  = "o";
-  assign greeting[5]  = " ";
-  assign greeting[6]  = "W";
-  assign greeting[7]  = "o";
-  assign greeting[8]  = "r";
-  assign greeting[9]  = "l";
-  assign greeting[10] = "d";
-  assign greeting[11] = "!";
-  reg [3:0]  idx;
-
   wire       reset = 0;
-  reg        transmit;
-  reg [7:0]  tx_byte;
+  wire        transmit;
+  wire [7:0]  tx_byte;
   wire       received;
   wire [7:0] rx_byte;
   wire       is_receiving;
@@ -46,25 +71,13 @@ module top(input wire  CLK,
         .recv_error(recv_error)           // Indicates error in receiving packet.
         );
 
-  // Only start new transmission when clk_counter == 0
-  reg [21:0] clk_counter = 0;
+  uart_node un(.clk(CLK),
+               .is_receiving(is_receiving),
+               .is_transmitting(is_transmitting),
+               .transmit(transmit),
+               .tx_byte(tx_byte),
+               .received(received),
+               .rx_byte(rx_byte));
 
-  // Blink the LED when we're waiting/transmitting
-  assign LED4 = (idx > 0);
-
-  always @(posedge CLK) begin
-    clk_counter <= clk_counter + 1;
-
-    if (transmit) begin
-      transmit <= 0;
-    end else if (!is_transmitting) begin
-      // If idx == 0 (new transmission), only start when clk_counter rolls
-      // over.
-      if (idx > 0 || clk_counter == 0) begin
-        transmit <= 1;
-        tx_byte <= greeting[idx];
-        idx <= (idx + 1) % n;
-      end
-    end
-  end
+  assign LED4 = (is_transmitting);
 endmodule
