@@ -29,83 +29,48 @@ To run `adder.v` and view the results in GTKWave, use:
 
     make sim V=adder_tb.v
 
-## Adder
+## Adders
 
 ### On paper
 
-Let's say we have `not`, `and`, `or`, `xor`, etc. Try to draw a half-adder. A
-half-adder is a component that adds 2 bits (`x`, `y`), and outputs a sum (`s`)
-and a carry bit (`c_out`):
+Let's design a 4-bit adder. The adder will have the following ports:
+- input numbers (4 bit): `x`, `y`,
+- carry-in: `c_in`,
+- sum (4 bit): `s`,
+- carry-out: `c_out`.
 
-    x  y    s c_out
+How to connect two 4-bit adders to produce an 8-bit adder?
 
-    0  0    0  0
-    0  1    1  0
-    1  0    1  0
-    1  1    0  1
-
-Now, use half-adders to construct an adder. An adder adds two bits and a carry-in (`c_in`):
-
-    x  y c_in   s c_out
-
-    0  0  0     0  0
-    0  0  1     1  0
-    0  1  0     1  0
-    0  1  1     0  1
-    1  0  0     1  0
-    1  0  1     0  1
-    1  1  0     0  1
-    1  1  1     1  1
-
-Finally, use the adders to construct a 4-bit adder:
-
-     x     y      s    c
-
-    0000  0000   0000  0
-    0000  0001   0001  0
-    ...
-    1001  0011   1100  0
-    ...
-    1111  0001   0000  1
-    ...
-    1111  1111   1110  1
+Now, let's try to design the same for BCD ([binary-coded
+decimals](https://en.wikipedia.org/wiki/Binary-coded_decimal)). What kind of
+inputs and outputs we'll have? What kind of logic?
 
 ### In Verilog
 
-Now, implement the same (half-adder, adder, and 4-bit adder) in `adder.v`,
-using Verilog.
+In `adder.v`, there is a 4-bit and 8-bit adder implemented. Try running the
+testbench (`make run V=adder_tb.v`) and see the values. Try to also view the
+waveform (`make sim V=adder_tb.v`).
 
-You can run the test-bench (`adder_tb.v`) and print values to test the adder.
+Now, try to implement a BCD adder. Test it using the provided testbench.
 
-Later, check that you can do the same using an arithmetic expression: `assign s = x + y`.
+## Latch and flip-flop
 
-## SR (NAND) latch
+Let's go back to [NAND game](http://www.nandgame.com/) and examine latch and
+data flip-flop.
 
-![SR latch](https://upload.wikimedia.org/wikipedia/commons/9/92/SR_Flip-flop_Diagram.svg)
+There is a simple data flip-flop (DFF) implemented in `dff.v`. Let's read it.
 
-What does it do? Draw a table, it will help with the next exercise.
+Modify the testbench (`dff_tb.v`) to check if it works as it should.
 
-Optionally: implement and test in Verilog.
+Now, create a data flip-flop with an `en` (enable) input. The value should
+change only if `en` is set to 1. Test it using the provided testbench.
 
-## Data flip-flop (DFF)
-
-Here is a D flip-flop:
-
-![Edge triggered D flip flop](https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Edge_triggered_D_flip_flop.svg/448px-Edge_triggered_D_flip_flop.svg.png)
-
-What does it do?
-
-- Hint: Analyze what happens when Clock = 0, then when Clock changes to 1,
-  then when clock stays at 1 and Data changes.
-- Spoilers:
-  - [Clock = 0, Data = D](dff1.png)
-  - [Clock = 1, Data = D](dff2.png)
-  - [Clock = 1, Data = 0](dff3-0.png)
-  - [Clock = 1, Data = 1](dff3-1.png)
-
-Implement it and test it in Verilog using primitive components (`nand` gates).
-
-Now implement the same using a `reg` and `always @(posedge clock)`.
+```verilog
+module dff_en(input wire clk,
+              input wire en,
+              input wire data,
+              output wire out);
+```
 
 ## Counter
 
