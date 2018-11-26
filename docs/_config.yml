@@ -1,1 +1,7 @@
 theme: jekyll-theme-slate
+title: FPGA tutorial
+defaults:
+  - scope:
+        path: "" # an empty string here means all files in the project
+    values:
+        layout: "default"

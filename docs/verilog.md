@@ -1,3 +1,7 @@
+---
+title: Verilog basics
+---
+
 # Verilog basics
 
 We'll be working in the `verilog` directory.

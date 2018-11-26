@@ -1,3 +1,7 @@
+---
+title: FPGA tutorial
+---
+
 # FPGA tutorial
 
 Here are some materials for my FPGA workshop. The workshop uses the open source

@@ -1,3 +1,7 @@
+---
+title: FPGA
+---
+
 # FPGA
 
 We'll be working in the `verilog` directory.

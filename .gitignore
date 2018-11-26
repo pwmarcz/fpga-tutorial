@@ -3,3 +3,5 @@ __pycache__
 *.vcd
 *.d
 build/
+/docs/_site
+/docs/.sass-cache
