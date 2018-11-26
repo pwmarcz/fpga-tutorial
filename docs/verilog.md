@@ -244,6 +244,6 @@ module is working (for instance, `"Storing byte XX at address YY"`).
 - [Verilog Beginner's Tutorial](http://zipcpu.com/tutorial/) by ZipCPU author
 
 <!-- WaveDrom -->
-<script src="http://wavedrom.com/skins/default.js" type="text/javascript"></script>
-<script src="http://wavedrom.com/wavedrom.min.js" type="text/javascript"></script>
+<script src="https://wavedrom.com/skins/default.js" type="text/javascript"></script>
+<script src="https://wavedrom.com/wavedrom.min.js" type="text/javascript"></script>
 <script type="text/javascript">WaveDrom.ProcessAll();</script>
