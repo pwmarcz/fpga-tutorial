@@ -39,16 +39,19 @@ Let's design a 4-bit adder. The adder will have the following ports:
 - sum (4 bit): `s`,
 - carry-out: `c_out`.
 
+Trace what it will do for some inputs (for instance, 10 + 8). How would we
+write the adder in pseudocode?
+
 How to connect two 4-bit adders to produce an 8-bit adder?
 
 Now, let's try to design the same for BCD ([binary-coded
 decimals](https://en.wikipedia.org/wiki/Binary-coded_decimal)). What kind of
-inputs and outputs we'll have? What kind of logic?
+inputs and outputs we'll have? Again, let's write pseudocode.
 
 ### In Verilog
 
-In `adder.v`, there is a 4-bit and 8-bit adder implemented. Try running the
-testbench (`make run V=adder_tb.v`) and see the values. Try to also view the
+In `adder.v`, there is a 4-bit and 8-bit adder implemented. Run the
+testbench (`make run V=adder_tb.v`) and see the values. View the
 waveform (`make sim V=adder_tb.v`).
 
 Now, try to implement a BCD adder. Test it using the provided testbench.
