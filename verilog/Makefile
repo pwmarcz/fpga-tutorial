@@ -54,10 +54,10 @@ endif
 # Dependencies
 
 build/%.d: %.v $(MAKEDEPS)
-	mkdir -p $(dir $@)
-	$(MAKEDEPS) $(@:.d=.bx.blif) $< > $@
-	$(MAKEDEPS) $(@:.d=.icestick.blif) $< >> $@
-	$(MAKEDEPS) $(@:.d=.out) $< >> $@
+	@mkdir -p $(dir $@)
+	@$(MAKEDEPS) $(@:.d=.bx.blif) $< > $@
+	@$(MAKEDEPS) $(@:.d=.icestick.blif) $< >> $@
+	@$(MAKEDEPS) $(@:.d=.out) $< >> $@
 
 # Synthesis
 
