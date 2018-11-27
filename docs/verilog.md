@@ -58,7 +58,8 @@ In `adder.v`, there is a 4-bit and 8-bit adder implemented. Run the
 testbench (`make run V=adder_tb.v`) and see the values. View the
 waveform (`make sim V=adder_tb.v`).
 
-Now, try to implement a BCD adder. Test it using the provided testbench.
+Now, try to implement a BCD adder. Expand it to build a 4-digit (16-bit) BCD
+adder. Test it using the provided testbench.
 
 ## Latch and flip-flop
 
