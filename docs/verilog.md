@@ -212,6 +212,18 @@ module memory(input wire clk,
 Write a test bench. What will be the result of reading uninitialized memory?
 How to initialize the memory to 0?
 
+<script type="WaveDrom">
+{signal: [
+  {name: 'clk', wave: 'p.........'},
+  {name: 'wen', wave: '01.0......'},
+  {name: 'waddr', wave: 'x==x......', data: ['A0', 'B2']},
+  {name: 'wdata', wave: 'x==x......', data: ['21', '3A']},
+  {name: 'ren', wave: '0.1.0..10.'},
+  {name: 'raddr', wave: 'x.==x..=x.', data: ['A0', 'B2', 'A0']},
+  {name: 'rdata', wave: 'x..33...3.', data: ['21', '3A', '21']}
+]}
+</script>
+
 Hint: You can use a `$display` statement to print debug messages while the
 module is working (for instance, `"Storing byte XX at address YY"`).
 
