@@ -33,7 +33,13 @@ To run `adder.v` and view the results in GTKWave, use:
 
 ### On paper
 
-Let's design a 4-bit adder. The adder will have the following ports:
+We'll try to add some binary numbers (101010 + 111). How does it work? Draw a
+single bit adder circuit, and connect 4 of them to have a 4-bit adder.
+
+Now we move on to hexadecimal addition. Try adding 7FFA + 3048. How does a
+single 4-bit adder look like, and how do we connect more of them?
+
+Let's look closer at a 4-bit adder. The adder will have the following ports:
 - input numbers (4 bit): `x`, `y`,
 - carry-in: `c_in`,
 - sum (4 bit): `s`,
@@ -42,9 +48,7 @@ Let's design a 4-bit adder. The adder will have the following ports:
 Trace what it will do for some inputs (for instance, 10 + 8). How would we
 write the adder in pseudocode?
 
-How to connect two 4-bit adders to produce an 8-bit adder?
-
-Now, let's try to design the same for BCD ([binary-coded
+Now, let's try to design the same for decimal digits and BCD ([binary-coded
 decimals](https://en.wikipedia.org/wiki/Binary-coded_decimal)). What kind of
 inputs and outputs we'll have? Again, let's write pseudocode.
 

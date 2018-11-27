@@ -23,20 +23,20 @@ endmodule
 
 module adder_bcd(input wire [3:0] x,
                  input wire [3:0] y,
-                 input wire [3:0] c_in,
+                 input wire c_in,
                  output wire [3:0] s,
-                 output wire [3:0] c_out);
+                 output wire c_out);
   wire [4:0] total = x + y + c_in;
-  assign c_out = total / 10;
-  assign s = total % 10;
+  assign c_out = total >= 10;
+  assign s = total - c_out * 10;
 endmodule
 
 module adder2_bcd(input wire [7:0] x,
                   input wire [7:0] y,
-                  input wire [3:0] c_in,
+                  input wire c_in,
                   output wire [7:0] s,
-                  output wire [3:0] c_out);
-  wire [3:0] c0;
+                  output wire c_out);
+  wire c0;
   adder_bcd a0(x[3:0], y[3:0], c_in, s[3:0], c0);
   adder_bcd a1(x[7:4], y[7:4], c0, s[7:4], c_out);
 endmodule
