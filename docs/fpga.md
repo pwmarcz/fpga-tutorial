@@ -8,29 +8,44 @@ We'll be working in the `verilog` directory.
 
 ## Setup
 
-You will need Verilog setup from the [previous step](../verilog/README.md).
+1. You will need Verilog setup from the [previous step](verilog.html).
 
-Then, install the [Icestorm toolchain](http://www.clifford.at/icestorm/). The
-easiest way is using the [apio](https://github.com/FPGAwars/apio) project:
+2. Then, install the [Icestorm toolchain](http://www.clifford.at/icestorm/). The
+   easiest way is using the [apio](https://github.com/FPGAwars/apio) project:
 
-    pip3 install --user apio
-    apio install icestorm
+       pip3 install --user apio
+       apio install icestorm
 
-This will download and unpack the necessary software in your home directory
-(under `~/.apio`). If you want to run the tools directly (not only from
-Makefile), add the toolchain to your `PATH`, for instance in your `.bashrc`:
+   This will download and unpack the necessary software in your home directory
+   (under `~/.apio`). If you want to run the tools directly (not only from
+   Makefile), add the toolchain to your `PATH`, for instance in your `.bashrc`:
 
-    export PATH="$HOME/.apio/packages/toolchain-icestorm/bin/:$PATH"
+       export PATH="$HOME/.apio/packages/toolchain-icestorm/bin/:$PATH"
 
-Under Linux, add yourself to the `dialout` group so that you can connect to
-the chip without sudo:
+3. Under Linux, add yourself to the `dialout` group so that you can connect to the
+   chip without sudo: (TODO: This doesn't seem to work for everyone, use
+   `USE_SUDO=1`)
 
-    sudo usermod -a -G dialout $USER
+       sudo adduser $USER dialout
 
-For the TinyFPGA BX board, you need to additionally do the following:
+    You will need to log out and log in again.
 
-    pip3 install --user tinyprog
-    apio drivers --serial-enable
+4. Now try uploading a design. Connect the Icestick board, and run:
+
+       make flash V=leds_icestick.v
+
+   If for some reason you need sudo, append `USE_SUDO=1`.
+
+   If you encounter problems under Mac OS X, see [Project IceStorm – Notes for
+   Installing on OSX](http://www.clifford.at/icestorm/notes_osx.html).
+   You will probably need to unload Apple's FTDI driver:
+
+       sudo kextunload com.apple.driver.AppleUSBFTDI
+
+5. For the TinyFPGA BX board, you need to additionally do the following:
+
+       pip3 install --user tinyprog
+       apio drivers --serial-enable
 
 ## Building and flashing
 
@@ -42,7 +57,7 @@ For the TinyFPGA BX module, you need to set `BOARD=bx` flag:
 
     make flash V=leds_bx.v BOARD=bx
 
-(If for some reason you need sudo, append `USE_SUDO=1`).
+(Append `USE_SUDO=1` if you need to use sudo).
 
 The build process has the following steps:
 
