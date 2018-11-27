@@ -118,7 +118,8 @@ divide it to create a slower. See the `leds` example.
 It's also possible to [get a faster clock using a
 PLL](https://stackoverflow.com/questions/43890771/how-to-get-a-faster-clock-in-verilog-on-a-lattice-icestick),
 but I haven't tried that yet. The `icetime` tool should tell you the maximum
-frequency for your design.
+frequency for your design (run `make time`). Use `icepll` to generate the
+right parameters for the PLL module.
 
 ### LEDs
 
