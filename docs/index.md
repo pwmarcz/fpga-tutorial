@@ -19,10 +19,10 @@ This tutorial has the following parts:
 Play the excellent [NandGame](http://nandgame.com/). Try to get at least to
 "Data Flip-Flop".
 
-## [Bit operations](https://github.com/pwmarcz/fpga-tutorial/bits/)
+## [Bit operations](https://github.com/pwmarcz/fpga-tutorial/tree/master/bits)
 
 If you are not familiar with bit operations, learn a bit about them. There
-are some links and exercises in the [bits/](https://github.com/pwmarcz/fpga-tutorial/bits/) directory.
+are some links and exercises in the [bits](https://github.com/pwmarcz/fpga-tutorial/tree/master/bits) directory.
 
 ## [Verilog basics](verilog.html)
 
