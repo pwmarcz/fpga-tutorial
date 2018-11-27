@@ -71,8 +71,8 @@ The build process has the following steps:
 
 ## Pins
 
-You can find the available pins in [icestick.pcf](icestick.pcf) and
-[bx.pcf](bx.pcf) files. Your module will reference these.
+You can find the available pins in [pcf/icestick.pcf](https://github.com/pwmarcz/fpga-tutorial/blob/master/verilog/pcf/icestick.pcf) and
+[pcf/bx.pcf](https://github.com/pwmarcz/fpga-tutorial/blob/master/verilog/pcf/bx.pcf) files. Your module will reference these.
 
 Here are the pinouts for reference:
 
