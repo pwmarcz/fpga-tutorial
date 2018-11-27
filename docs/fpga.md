@@ -126,7 +126,7 @@ The Icestick has 5 LEDs, the BX has one. You can turn them on and off just by
 specifying the pins in module output.
 
 You can connect your own LEDs as well, just make sure to connect the right
-resistors. The Icestick outputs are 3.3 V, the BX ones are 1.2 V (TODO check).
+resistors. The voltage on pins is 3.3 V.
 
 ### Buttons and switches
 
