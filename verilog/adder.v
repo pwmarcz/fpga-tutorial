@@ -4,7 +4,7 @@ module adder4(input wire [3:0] x,
               output wire [3:0] s,
               output wire c_out);
   assign s = x + y + c_in;
-  assign c_out = (x + y + c_in) > 16;
+  assign c_out = (x + y + c_in) >= 16;
 endmodule
 
 module adder8(input wire [7:0] x,

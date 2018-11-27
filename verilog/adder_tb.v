@@ -17,6 +17,7 @@ module Top;
       $dumpvars;
 
       x <= 'h00; y <= 'h00; c_in <= 1;    // sum = 'h01
+      #5 x <= 'h80; y <= 'h7F; c_in <= 1; // sum = 'h100
       #5 x <= 'hA0; y <= 'h0B; c_in <= 0; // sum = 'hAB
       #5 x <= 'h08; y <= 'h18; c_in <= 0; // sum = 'h20
       #5 x <= 'h7F; y <= 'hA0; c_in <= 0; // sum = 'h11F
