@@ -66,7 +66,8 @@ adder. Test it using the provided testbench.
 Let's go back to [NAND game](http://www.nandgame.com/) and examine latch and
 data flip-flop.
 
-There is a simple data flip-flop (DFF) implemented in `dff.v`. Let's read it.
+There is a simple data flip-flop (DFF) implemented in `dff.v`. Let's read it,
+and draw a wave diagram.
 
 Modify the testbench (`dff_tb.v`) to check if it works as it should.
 
