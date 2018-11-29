@@ -24,9 +24,9 @@ Play the excellent [NandGame](http://nandgame.com/). Try to get at least to
 If you are not familiar with bit operations, learn a bit about them. There
 are some links and exercises in the [bits](https://github.com/pwmarcz/fpga-tutorial/tree/master/bits) directory.
 
-## [Verilog basics](verilog.html)
+## [Verilog](verilog.html)
 
-Move on to Verilog basics.
+Move on to Verilog language.
 
 ## [FPGA](fpga.html)
 
