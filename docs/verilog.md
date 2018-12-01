@@ -6,6 +6,9 @@ title: Verilog
 
 We'll be working in the `verilog` directory.
 
+There are some solutions in `verilog/spoilers`, but as the name suggests, you
+shouldn't look there before trying to solve the exercises yourself.
+
 ## Prerequisites
 
 You will need the following:
