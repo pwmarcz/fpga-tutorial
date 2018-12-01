@@ -112,8 +112,9 @@ Here are some parts you can use in your projects.
 
 ### Clock
 
-The Icestick has a 12 MHz clock signal, the BX a 16 MHz one. You will need to
-divide it to create a slower. See the `leds` example.
+The Icestick has a 12 MHz clock signal, the BX a 16 MHz one. For changes that a
+human can notice, you will need to divide it to create a slower clock. See the
+`blinky` example.
 
 It's also possible to [get a faster clock using a
 PLL](https://stackoverflow.com/questions/43890771/how-to-get-a-faster-clock-in-verilog-on-a-lattice-icestick),
