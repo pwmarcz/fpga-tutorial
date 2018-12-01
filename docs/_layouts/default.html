@@ -14,6 +14,23 @@
       .inner {
         max-width: 700px;
       }
+
+      #header_wrap {
+        background-image: url(bg.png);
+        background-position: center;
+      }
+
+      header {
+        background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.7), rgba(0,0,0,0.7), rgba(0,0,0,0));
+      }
+
+      header > h1 {
+        text-align: center;
+      }
+
+      header > h1 > a {
+        color: inherit;
+      }
     </style>
     <title>{{ page.title }} | {{ site.title }}</title>
   </head>
@@ -27,7 +44,7 @@
             <a id="forkme_banner" href="{{ site.github.repository_url }}">View on GitHub</a>
           {% endif %}
 
-          <a href="{{ site.github.url }}"><h1 id="project_title">{{ site.title | default: site.github.repository_name }}</h1></a>
+          <h1 id="project_title"><a href="{{ site.github.url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
         </header>
     </div>
 
@@ -44,7 +61,9 @@
         {% if site.github.is_project_page %}
         <p class="copyright">{{ site.title | default: site.github.repository_name }} maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
         {% endif %}
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a>.
+          Header image from the <a href="http://visual6502.org/images/6502/index.html">Visual 6502</a> project.
+        </p>
       </footer>
     </div>
 
