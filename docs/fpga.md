@@ -32,7 +32,7 @@ We'll be working in the `verilog` directory.
 
 4. Now try uploading a design. Connect the Icestick board, and run:
 
-       make flash V=leds_icestick.v
+       make flash V=blinky_icestick.v
 
    If for some reason you need sudo, append `USE_SUDO=1`.
 
@@ -51,11 +51,11 @@ We'll be working in the `verilog` directory.
 
 To upload a design, use `make flash`. For example:
 
-    make flash V=leds_icestick.v
+    make flash V=blinky_icestick.v
 
 For the TinyFPGA BX module, you need to set `BOARD=bx` flag:
 
-    make flash V=leds_bx.v BOARD=bx
+    make flash V=blinky_bx.v BOARD=bx
 
 (Append `USE_SUDO=1` if you need to use sudo).
 
