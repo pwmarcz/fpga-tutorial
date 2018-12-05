@@ -3,6 +3,9 @@
 .PHONY: all
 all:
 
+# Custom project configuration
+-include ./project.mk
+
 # Don't delete these
 .PRECIOUS: build/%.d build/%.blif build/%.bin build/%.asc
 
