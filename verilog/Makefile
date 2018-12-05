@@ -83,7 +83,7 @@ build/%.bin: build/%.asc
 # Simulation
 
 build/%.out: %.v build/%.d
-	$(IVERILOG) -DVCD_FILE=\"$(<:.v=.vcd)\" -o $@ $<
+	$(IVERILOG) -DVCD_FILE=\"build/$(<:.v=.vcd)\" -o $@ $<
 
 # Top-level goals (flash, sim, run, time)
 
@@ -102,7 +102,7 @@ sim:: run
 
 .PHONY: run
 run:: build/$(V:.v=.out)
-	cd build && ./$(V:.v=.out)
+	./$<
 
 .PHONY: time
 time:: build/$(V:.v=.$(BOARD).asc)
