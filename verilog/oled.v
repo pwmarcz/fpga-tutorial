@@ -123,6 +123,7 @@ module oled_controller(input wire       clk,
   reg [7:0] data_rgb_lower_byte;
 
   reg [3:0] state = STATE_RESET;
+  reg [9:0] reset_counter = 0;
 
   integer i;
 
@@ -227,11 +228,14 @@ module oled_controller(input wire       clk,
       pin_res <= 1;
       case (state)
         STATE_RESET: begin
-          if (spi_ready) begin
-            pin_res <= 0;
-            state <= STATE_INIT;
-            command_idx <= 0;
-          end
+          pin_res <= 0;
+          reset_counter <= reset_counter + 1;
+          if (&reset_counter)
+            if (spi_ready) begin
+              pin_res <= 0;
+              state <= STATE_INIT;
+              command_idx <= 0;
+            end
         end
         STATE_INIT: begin
           if (spi_ready) begin
