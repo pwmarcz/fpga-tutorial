@@ -11,10 +11,6 @@ shouldn't look there before trying to solve the exercises yourself.
 
 ## Prerequisites
 
-First, initialize the Git submodule with libraries:
-
-    git submodule update --init
-
 You will need the following:
 
 - An editor that understands Verilog. Atom or Sublime Text should be fine.

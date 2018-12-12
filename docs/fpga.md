@@ -8,10 +8,7 @@ We'll be working in the `verilog` directory.
 
 ## Setup
 
-1. You will need Verilog setup from the [previous step](verilog.html). Remember
-   to also initialize the Git submodule with libraries:
-
-       git submodule update --init
+1. You will need Verilog setup from the [previous step](verilog.html).
 
 2. Then, install the [Icestorm toolchain](http://www.clifford.at/icestorm/). The
    easiest way is using the [apio](https://github.com/FPGAwars/apio) project:
