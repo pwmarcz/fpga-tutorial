@@ -8,7 +8,10 @@ We'll be working in the `verilog` directory.
 
 ## Setup
 
-1. You will need Verilog setup from the [previous step](verilog.html).
+1. You will need Verilog setup from the [previous step](verilog.html). Remember
+   to also initialize the Git submodule with libraries:
+
+       git submodule update --init
 
 2. Then, install the [Icestorm toolchain](http://www.clifford.at/icestorm/). The
    easiest way is using the [apio](https://github.com/FPGAwars/apio) project:
@@ -71,8 +74,8 @@ The build process has the following steps:
 
 ## Pins
 
-You can find the available pins in [pcf/icestick.pcf](https://github.com/pwmarcz/fpga-tutorial/blob/master/verilog/pcf/icestick.pcf) and
-[pcf/bx.pcf](https://github.com/pwmarcz/fpga-tutorial/blob/master/verilog/pcf/bx.pcf) files. Your module will reference these.
+You can find the available pins in [pcf/icestick.pcf](https://github.com/pwmarcz/fpga-tools/blob/master/pcf/icestick.pcf) and
+[pcf/bx.pcf](https://github.com/pwmarcz/fpga-tools/blob/master/pcf/bx.pcf) files. Your module will reference these.
 
 Here are the pinouts for reference:
 

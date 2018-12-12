@@ -1,4 +1,4 @@
-`include "uart.v"
+`include "fpga-tools/components/uart.v"
 
 module uart_node(input wire clk,
                  input wire is_receiving,
