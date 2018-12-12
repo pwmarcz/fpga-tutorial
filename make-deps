@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+set -e
+
+if [ $# -ne 2 ]; then
+    echo "Usage: $0 root file"
+    exit 1
+fi
+
+path() {
+    if [[ "$(dirname $1)" == "." ]]; then
+        echo
+    else
+        echo $(dirname $1)/
+    fi
+}
+
+enter() {
+    local root=$1
+    local file=$2
+    local dep
+    local deps=$(sed -nr 's/^`include "(.*\.v)"$/\1/p' $file | tr '\n' ' ')
+
+    if [ -z "$deps" ]; then
+        return
+    fi
+
+    echo -n "$root: "
+    for dep in $deps; do
+        echo -n "$(path $file)$dep "
+    done
+    echo
+
+    for dep in $deps; do
+        enter $root $(path $file)$dep
+    done
+}
+
+enter $1 $2
