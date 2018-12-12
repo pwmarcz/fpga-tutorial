@@ -1,0 +1,8 @@
+#!/bin/bash -ex
+
+# Example: ./subtree pull HEAD
+
+op=$1
+shift
+
+exec git subtree $op --prefix=verilog/fpga-tools git@github.com:pwmarcz/fpga-tools "$@"
