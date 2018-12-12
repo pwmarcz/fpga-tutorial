@@ -1,3 +1,0 @@
-[submodule "verilog/fpga-tools"]
-	path = verilog/fpga-tools
-	url = https://github.com/pwmarcz/fpga-tools
