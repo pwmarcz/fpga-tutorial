@@ -3,8 +3,8 @@ title: FPGA tutorial
 ---
 
 Here are some materials for my FPGA workshop. The workshop uses the open source
-Icestorm toolchain. The hardware is Icestick and TinyFPGA boards because that's
-what I have, as well as some peripherals like OLED displays.
+Icestorm toolchain. The hardware is a few Lattice boards (because that's what I
+have), as well as some peripherals like OLED displays.
 
 The code is MIT licensed (see LICENSE) unless otherwise stated in the
 file. Patches welcome!

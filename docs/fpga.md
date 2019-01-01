@@ -60,6 +60,10 @@ For the TinyFPGA BX module, you need to set `BOARD=bx` flag:
 
     make flash V=blinky_bx.v BOARD=bx
 
+Same for the IceBreaker module:
+
+    make flash V=blinky_icebreaker.v BOARD=icebreaker
+
 (Append `USE_SUDO=1` if you need to use sudo).
 
 The build process has the following steps:
@@ -74,13 +78,15 @@ The build process has the following steps:
 
 ## Pins
 
-You can find the available pins in [pcf/icestick.pcf](https://github.com/pwmarcz/fpga-tools/blob/master/pcf/icestick.pcf) and
-[pcf/bx.pcf](https://github.com/pwmarcz/fpga-tools/blob/master/pcf/bx.pcf) files. Your module will reference these.
+You can find the available pins in
+[fpga-tools/pcf](https://github.com/pwmarcz/fpga-tools/tree/master/pcf) directory. Your module
+will need to reference these.
 
 Here are the pinouts for reference:
 
 - [iCEstick pinout](http://www.pighixxx.net/portfolio-items/icestick/)
 - [TinyFPGA BX pinout](https://www.crowdsupply.com/tinyfpga/tinyfpga-bx/updates/manufacturing-continues)
+- [IceBreaker pinout](https://raw.githubusercontent.com/icebreaker-fpga/icebreaker/master/img/icebreaker-v1_0b-legend.jpg)
 
 ## Ideas
 
